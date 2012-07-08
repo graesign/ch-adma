@@ -22,7 +22,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>CakePHP Test Suite 1.3</title>
+		<title>Admond Administratie</title>
 		<style type="text/css">
 			h3 {font-size: 170%; padding-top: 1em}
 			a {font-size: 120%}
@@ -120,6 +120,7 @@
 		<div id="container">
 			<div id="header">
 				<h1>CakePHP: the rapid development php framework</h1>
+                <h1>I FOUND YOU</h1>
 			</div>
 			<div id="content">
 			<h2>CakePHP Test Suite 1.3</h2>
