@@ -7,12 +7,12 @@
  * PHP versions 4 and 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       cake
  * @subpackage    cake.app.config
@@ -29,11 +29,12 @@
  * Development Mode:
  * 	1: Errors and warnings shown, model caches refreshed, flash messages halted.
  * 	2: As in 1, but also with full debug messages and SQL output.
+ * 	3: As in 2, but also with full controller dump.
  *
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 2);
+	Configure::write('debug', 1);
 
 /**
  * CakePHP Log Level:
@@ -69,10 +70,20 @@
 	//Configure::write('App.baseUrl', env('SCRIPT_NAME'));
 
 /**
- * Uncomment the define below to use CakePHP prefix routes.
+ * Uncomment the define below to use CakePHP admin routes.
  *
- * The value of the define determines the names of the routes
- * and their associated controller actions:
+ * The value of the define determines the name of the route
+ * and its associated controller actions:
+ *
+ * 'admin' -> admin_index() and /admin/controller/index
+ * 'superuser' -> superuser_index() and /superuser/controller/index
+ *
+ * [Note Routing.admin is deprecated in 1.3.  Use Routing.prefixes instead]
+ */
+	//Configure::write('Routing.admin', 'admin');
+
+/**
+ * Uncomment the define below to use CakePHP prefix routes.
  *
  * Set to an array of prefixes you want to use in your application. Use for
  * admin or other prefixed routes.
@@ -82,10 +93,8 @@
  * Enables:
  *	`admin_index()` and `/admin/controller/index`
  *	`manager_index()` and `/manager/controller/index`
- *
- * [Note Routing.admin is deprecated in 1.3.  Use Routing.prefixes instead]
  */
-	//Configure::write('Routing.prefixes', array('admin'));
+	Configure::write('Routing.prefixes', array('admin'));
 
 /**
  * Turn off all caching application-wide.
@@ -121,7 +130,7 @@
  * Set the value of 'Session.save' to <name> to utilize it in CakePHP.
  *
  * To use database sessions, run the app/config/schema/sessions.php schema using
- * the cake shell command: cake schema create Sessions
+ * the cake shell command: cake schema run create Sessions
  *
  */
 	Configure::write('Session.save', 'php');
@@ -158,11 +167,6 @@
 
 /**
  * The name of CakePHP's session cookie.
- *
- * Note the guidelines for Session names states: "The session name references
- * the session id in cookies and URLs. It should contain only alphanumeric
- * characters."
- * @link http://php.net/session_name
  */
 	Configure::write('Session.cookie', 'CAKEPHP');
 
@@ -179,8 +183,7 @@
 
 /**
  * When set to false, HTTP_USER_AGENT will not be checked
- * in the session. You might want to set the value to false, when dealing with
- * older versions of IE, Chrome Frame or certain web-browsing devices and AJAX
+ * in the session
  */
 	Configure::write('Session.checkAgent', true);
 
@@ -189,9 +192,9 @@
  * in 'Session.timeout' is multiplied according to the settings here.
  * Valid values:
  *
- * 'high'   Session timeout in 'Session.timeout' x 10
- * 'medium' Session timeout in 'Session.timeout' x 100
- * 'low'    Session timeout in 'Session.timeout' x 300
+ * 'high'	Session timeout in 'Session.timeout' x 10
+ * 'medium'	Session timeout in 'Session.timeout' x 100
+ * 'low'		Session timeout in 'Session.timeout' x 300
  *
  * CakePHP session IDs are also regenerated between requests if
  * 'Security.level' is set to 'high'.
@@ -201,22 +204,13 @@
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxf789Sadfa1bWwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', '56362da2c9aadb60f292f5a02ae7141561f9d240');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '7685930965770234678967419683645');
+	Configure::write('Security.cipherSeed', '2017745068544044190');
 
-/**
- * Apply timestamps with the last modified time to static assets (js, css, images).
- * Will append a querystring parameter containing the time the file was modified. This is
- * useful for invalidating browser caches.
- *
- * Set to `true` to apply timestamps when debug > 0. Set to 'force' to always enable
- * timestamping regardless of debug value.
- */
-	//Configure::write('Asset.timestamp', true);
 /**
  * Compress CSS output by removing comments, whitespace, repeating tags, etc.
  * This requires a/var/cache directory to be writable by the web server for caching.
@@ -297,7 +291,6 @@
  * 			'127.0.0.1:11211' // localhost, default port 11211
  * 		), //[optional]
  * 		'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
- * 		'persistent' => true, // [optional] set this to false for non-persistent connections
  *	));
  *
  */

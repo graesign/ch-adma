@@ -1,16 +1,16 @@
 <?php
 /**
- * CSS helping functions
+ * Short description for file.
  *
  * PHP versions 4 and 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright 2005-2009, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright 2005-2009, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       cake
  * @subpackage    cake.app.webroot
@@ -21,16 +21,14 @@ if (!defined('CAKE_CORE_INCLUDE_PATH')) {
 	header('HTTP/1.1 404 Not Found');
 	exit('File Not Found');
 }
-
 /**
- * Ensure required classes are available.
+ * Enter description here...
  */
 if (!class_exists('File')) {
 	uses('file');
 }
-
 /**
- * Make clean CSS
+ * Enter description here...
  *
  * @param unknown_type $path
  * @param unknown_type $name
@@ -46,7 +44,7 @@ if (!class_exists('File')) {
 		return $output;
 	}
 /**
- * Write CSS cache
+ * Enter description here...
  *
  * @param unknown_type $path
  * @param unknown_type $content

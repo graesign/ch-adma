@@ -39,7 +39,7 @@ if (!defined('PHP_EOL')) {
 		case 'WIN':
 			define('PHP_EOL', "\r\n");
 			break;
-		defa2ult:
+		default:
 			define('PHP_EOL', "\n");
 	}
 }
