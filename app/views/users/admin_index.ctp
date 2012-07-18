@@ -3,7 +3,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New User', true), array('action'=>'add')); ?></li>
+			<li><?php echo $this->Html->link(__('Nieuwe klant', true), array('action'=>'add')); ?></li>
 		</ul>
 	</div>
 
@@ -28,7 +28,7 @@
 				'action' => 'delete',
 				$user['User']['id'],
 				'token' => $this->params['_Token']['key'],
-			), null, __('Are you sure?', true));
+			), null, __('Weet u het zeker?', true));
 
 			$rows[] = array(
 				$user['User']['id'],
@@ -47,4 +47,10 @@
 </div>
 
 <div class="paging"><?php echo $paginator->numbers(); ?></div>
-<div class="counter"><?php echo $paginator->counter(array('format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true))); ?></div>
+<div class="counter"><?php echo $paginator->counter(array('format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true))); ?></div>	
+	
+	
+<!--
+	<div class="counter"><?php echo $paginator->counter(array('format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true))); ?></div>
+-->	
+	
