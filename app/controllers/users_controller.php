@@ -1,15 +1,7 @@
 <?php
 /**
  * Users Controller
- *
- * PHP version 5
- *
- * @category Controller
- * @package  Croogo
- * @version  1.0
- * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ *	
  */
 class UsersController extends AppController {
 /**
@@ -79,7 +71,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			$this->data['User']['activation_key'] = md5(uniqid());
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The User has been saved', true), 'default', array('class' => 'success'));
+				$this->Session->setFlash(__('Gebruiker is opgeslagen', true), 'default', array('class' => 'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The User could not be saved. Please, try again.', true), 'default', array('class' => 'error'));
@@ -102,7 +94,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The User has been saved', true), 'default', array('class' => 'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The User could not be saved. Please, try again.', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('Deze gebruiker kon niet worden opgeslagen. Probeer het later nog eens.', true), 'default', array('class' => 'error'));
 			}
 		}
 		if (empty($this->data)) {
@@ -121,13 +113,13 @@ class UsersController extends AppController {
 			$user = $this->User->findById($id);
 			if ($user['User']['password'] == Security::hash($this->data['User']['current_password'], null, true)) {
 				if ($this->User->save($this->data)) {
-					$this->Session->setFlash(__('Password has been reset.', true), 'default', array('class' => 'success'));
+					$this->Session->setFlash(__('Wachtwoord is hersteld.', true), 'default', array('class' => 'success'));
 					$this->redirect(array('action' => 'index'));
 				} else {
-					$this->Session->setFlash(__('Password could not be reset. Please, try again.', true), 'default', array('class' => 'error'));
+					$this->Session->setFlash(__('Wachtwoord kan niet worden hersteld. Probeer het later nog eens.', true), 'default', array('class' => 'error'));
 				}
 			} else {
-				$this->Session->setFlash(__('Current password did not match. Please, try again.', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('Wachtwoorden kloppen niet, probeer het nog eens.', true), 'default', array('class' => 'error'));
 			}
 		}
 		if (empty($this->data)) {
@@ -299,5 +291,4 @@ class UsersController extends AppController {
 		$this->set('title_for_layout', $user['User']['name']);
 		$this->set(compact('user'));
 	}
-
 }
