@@ -148,7 +148,7 @@ class UsersController extends AppController {
 	}
 
 	public function admin_logout() {
-		$this->Session->setFlash(__('Succesvol afgemeld.', true), 'default', array('class' => 'success'));
+		$this->Session->setFlash(__('U bent succesvol afgemeld.', true), 'default', array('class' => 'success'));
 		$this->redirect($this->Auth->logout());
 	}
 
@@ -209,7 +209,7 @@ class UsersController extends AppController {
 	public function edit() {}
 
 	public function forgot() {
-		$this->set('title_for_layout', __('Forgot Password', true));
+		$this->set('title_for_layout', __('Wachtwoord vergeten', true));
 
 		if (!empty($this->data) && isset($this->data['User']['username'])) {
 			$user = $this->User->findByUsername($this->data['User']['username']);
