@@ -67,7 +67,7 @@
 				);
 			}
 			echo $this->Html->tableCells($rows, array('class' => 'file'), array('class' => 'file'));
-
+			
 			echo $tableHeaders;
 		?>
 		</table>

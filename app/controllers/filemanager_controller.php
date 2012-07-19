@@ -19,7 +19,7 @@ class FilemanagerController extends AppController {
  * @access public
  */
 	public $name = 'Filemanager';
-
+	
 /**
  * Models used by the Controller
  *
@@ -231,6 +231,8 @@ class FilemanagerController extends AppController {
 		exit();
 	}
 
+	
+
 	public function admin_rename() {
 		if (isset($this->params['url']['path'])) {
 			$path = $this->params['url']['path'];
@@ -297,5 +299,4 @@ class FilemanagerController extends AppController {
 	public function admin_chmod() {
 
 	}
-
 }

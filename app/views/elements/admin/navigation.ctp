@@ -79,8 +79,8 @@
 		<li>
 			<?php echo $this->Html->link(__('Gebruikers', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?>
 			<ul>
-				<li><?php echo $this->Html->link(__('Users', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?></li>
-				<li><?php echo $this->Html->link(__('Roles', true), array('plugin' => null, 'controller' => 'roles', 'action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('Gebruikers', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('Rechten', true), array('plugin' => null, 'controller' => 'roles', 'action' => 'index')); ?></li>
 				<li><?php echo $this->Html->link(__('Permissions', true), array('plugin' => 'acl', 'controller' => 'acl_permissions', 'action' => 'index')); ?></li>
 			</ul>
 		</li>

@@ -7,7 +7,7 @@
 				<li><a href="#user-main"><?php __('User'); ?></a></li>
 				<?php echo $this->Layout->adminTabs(); ?>
 			</ul>
-
+			
 			<div id="user-main">
 			<?php
 				echo $this->Form->input('role_id');

@@ -3,7 +3,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Type', true), array('action'=>'add')); ?></li>
+			<li><?php echo $this->Html->link(__('Nieuwe Type', true), array('action'=>'add')); ?></li>
 		</ul>
 	</div>
 
@@ -27,7 +27,7 @@
 				'action' => 'delete',
 				$type['Type']['id'],
 				'token' => $this->params['_Token']['key'],
-			), null, __('Are you sure?', true));
+			), null, __('Weet u het?', true));
 
 			$rows[] = array(
 				$type['Type']['id'],

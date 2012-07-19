@@ -239,12 +239,12 @@ class UsersController extends AppController {
 
 	public function reset($username = null, $key = null) {
 		$this->set('title_for_layout', __('Reset wachtwoord', true));
-
+		
 		if ($username == null || $key == null) {
 			$this->Session->setFlash(__('An error occurred.', true), 'default', array('class' => 'error'));
 			$this->redirect(array('action' => 'login'));
 		}
-
+		
 		$user = $this->User->find('first', array(
 			'conditions' => array(
 				'User.username' => $username,
