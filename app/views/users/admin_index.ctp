@@ -1,5 +1,5 @@
 <div class="users index">
-	<h2><?php __('Users');?></h2>
+	<h2><?php __('Gebruikers');?></h2>
 
 	<div class="actions">
 		<ul>

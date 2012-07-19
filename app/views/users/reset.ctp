@@ -3,7 +3,7 @@
 	<?php echo $this->Form->create('User', array('url' => array('controller' => 'users', 'action' => 'reset', $username, $key)));?>
 		<fieldset>
 		<?php
-			echo $this->Form->input('password', array('label' => __('New password', true)));
+			echo $this->Form->input('password', array('label' => __('Nieuw wachtwoord', true)));
 		?>
 		</fieldset>
 	<?php echo $this->Form->end('Submit');?>

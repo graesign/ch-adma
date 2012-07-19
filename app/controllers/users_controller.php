@@ -60,7 +60,7 @@ class UsersController extends AppController {
 	}
 
 	public function admin_index() {
-		$this->set('title_for_layout', __('Users', true));
+		$this->set('title_for_layout', __('Gebruikers', true));
 
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
@@ -153,7 +153,7 @@ class UsersController extends AppController {
 	}
 
 	public function index() {
-		$this->set('title_for_layout', __('Users', true));
+		$this->set('title_for_layout', __('Gebruikers', true));
 	}
 
 	public function add() {

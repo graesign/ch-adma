@@ -5,8 +5,8 @@
         </div>
 		<div class="grid_8 header-left">
 		<?php
-			echo $this->Html->link(__('Dashboard', true), '/admin');
-			echo ' <span>|</span> '; 
+			// echo $this->Html->link(__('Dashboard', true), '/admin');
+			// echo ' <span>|</span> '; 
 			echo $this->Html->link(__('Terug naar de website', true), '/');
 		?>
 		</div>

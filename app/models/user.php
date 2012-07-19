@@ -26,6 +26,7 @@ class User extends AppModel {
  * @var string
  * @access public
  */
+	// Alfabetisch
 	public $order = 'name ASC';
 
 /**
@@ -56,40 +57,40 @@ class User extends AppModel {
 		'username' => array(
 			'isUnique' => array(
 				'rule' => 'isUnique',
-				'message' => 'The username has already been taken.',
+				'message' => 'Gebruikersnaam bestaat al.',
 				'last' => true,
 			),
 			'notEmpty' => array(
 				'rule' => 'notEmpty',
-				'message' => 'This field cannot be left blank.',
+				'message' => 'Deze veld dient ingevuld te worden.',
 				'last' => true,
 			),
 			'validAlias' => array(
 				'rule' => '_validAlias',
-				'message' => 'This field must be alphanumeric',
+				'message' => 'Deze veld dient ingevuld te worden.',
 				'last' => true,
 			),
 		),
 		'email' => array(
 			'email' => array(
 				'rule' => 'email',
-				'message' => 'Please provide a valid email address.',
+				'message' => 'Vul een geldig email adres in.',
 				'last' => true,
 			),
 			'isUnique' => array(
 				'rule' => 'isUnique',
-				'message' => 'Email address already in use.',
+				'message' => 'Email adres is al in gebruik.',
 				'last' => true,
 			),
 		),
 		'password' => array(
 			'rule' => array('minLength', 6),
-			'message' => 'Passwords must be at least 6 characters long.',
+			'message' => 'Wachtwoord moet minimaal 6 tekens bevatten.',
 		),
 		'name' => array(
 			'notEmpty' => array(
 				'rule' => 'notEmpty',
-				'message' => 'This field cannot be left blank.',
+				'message' => 'Deze veld dient ingevuld te worden.',
 				'last' => true,
 			),
 			'validName' => array(

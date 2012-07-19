@@ -77,7 +77,7 @@
 		</li>
 
 		<li>
-			<?php echo $this->Html->link(__('Gebruikes', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Gebruikers', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?>
 			<ul>
 				<li><?php echo $this->Html->link(__('Users', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?></li>
 				<li><?php echo $this->Html->link(__('Roles', true), array('plugin' => null, 'controller' => 'roles', 'action' => 'index')); ?></li>
