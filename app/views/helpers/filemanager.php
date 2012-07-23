@@ -98,7 +98,7 @@ class FilemanagerHelper extends AppHelper {
 		if (DS == '/') {
 			$current_path = DS;
 		} else {
-			$current_path = '';
+			$current_path = 'c:/data';
 		}
 		foreach ($path_e AS $p) {
 			if ($p != null) {

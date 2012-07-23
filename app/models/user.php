@@ -4,12 +4,6 @@
  *
  * PHP version 5
  *
- * @category Model
- * @package  Croogo
- * @version  1.0
- * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
  */
 class User extends AppModel {
 /**
@@ -127,12 +121,10 @@ class User extends AppModel {
 		if (!$created) {
 			$parent = $this->parentNode();
 			$parent = $this->node($parent);
-			$node = $this->node();
-			$aro = $node[0];
+			$node 	= $this->node();
+			$aro 	= $node[0];
 			$aro['Aro']['parent_id'] = $parent[0]['Aro']['id'];
 			$this->Aro->save($aro);
 		}
 	}
-
-
 }

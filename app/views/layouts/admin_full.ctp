@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title><?php echo $title_for_layout; ?> - <?php __('Croogo'); ?></title>
+	<title><?php echo $title_for_layout; ?> - <?php __('Admond Administratie'); ?></title>
 	<?php
 		echo $this->Html->css(array(
 			'reset',
@@ -49,7 +49,9 @@
 		<div class="push"></div>
 	</div>
 
-	<?php echo $this->element('admin/footer'); ?>
+		<?php echo $this->element('admin/footer'); ?>
+		<?php Configure::write('debug', 2); ?>
 
 	</body>
 </html>
+<?php Configure::write('debug', 1); ?>

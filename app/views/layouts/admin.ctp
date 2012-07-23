@@ -34,6 +34,7 @@
 
 	<div id="wrapper">
 		<?php echo $this->element('admin/header'); ?>
+		
 
 		<div id="nav-container">
 			<div class="container_16">

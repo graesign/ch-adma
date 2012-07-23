@@ -93,7 +93,7 @@ class LayoutHelper extends AppHelper {
 	public function js() {
 		$croogo = array();
 		if (isset($this->params['locale'])) {
-			$croogo['basePath'] = Router::url('/'.$this->params['locale'].'/');
+			$croogo['basePath'] = Router::url('/'.$this->params['locale'].'');
 		} else {
 			$croogo['basePath'] = Router::url('/');
 		}

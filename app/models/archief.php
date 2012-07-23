@@ -4,6 +4,8 @@
 		
 			public $name = 'Archief';
 			// public $useTable = 'mailing_list';
+			var $useDbConfig = 'dbmis';
+
 	} 
 
 ?>

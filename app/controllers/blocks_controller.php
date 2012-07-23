@@ -155,5 +155,4 @@ class BlocksController extends AppController {
 
 		$this->redirect(array('action' => 'index'));
 	}
-
 }

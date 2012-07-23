@@ -11,7 +11,7 @@ class UsersController extends AppController {
  * @access public
  */
 	public $name = 'Users';
-
+	
 /**
  * Components
  *
@@ -40,7 +40,7 @@ class UsersController extends AppController {
 			}
 			$cacheName = 'auth_failed_' . $this->data['User'][$field];
 			if (Cache::read($cacheName, 'users_login') >= Configure::read('User.failed_login_limit')) {
-				$this->Session->setFlash(__('You have reached maximum limit for failed login attempts. Please try again after a few minutes.', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('De maximale limiet voor pogingen is bereikt. Probeer het over een later nog eeens.', true), 'default', array('class' => 'error'));
 				$this->redirect(array('action' => $this->params['action']));
 			}
 		}
@@ -74,7 +74,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('Gebruiker is opgeslagen', true), 'default', array('class' => 'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The User could not be saved. Please, try again.', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('Gebruiker kon niet worden opgeslagen. Probeer het later eens.', true), 'default', array('class' => 'error'));
 				unset($this->data['User']['password']);
 			}
 		} else {
@@ -91,7 +91,7 @@ class UsersController extends AppController {
 		}
 		if (!empty($this->data)) {
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The User has been saved', true), 'default', array('class' => 'success'));
+				$this->Session->setFlash(__('Gebruiker is opgeslagen', true), 'default', array('class' => 'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('Deze gebruiker kon niet worden opgeslagen. Probeer het later nog eens.', true), 'default', array('class' => 'error'));
@@ -146,7 +146,6 @@ class UsersController extends AppController {
 		$this->set('title_for_layout', __('Admin Login', true));
 		$this->layout = "admin_login";
 	}
-
 	public function admin_logout() {
 		$this->Session->setFlash(__('U bent succesvol afgemeld.', true), 'default', array('class' => 'success'));
 		$this->redirect($this->Auth->logout());
@@ -198,9 +197,9 @@ class UsersController extends AppController {
 			$this->User->id = $user['User']['id'];
 			$this->User->saveField('status', 1);
 			$this->User->saveField('activation_key', md5(uniqid()));
-			$this->Session->setFlash(__('Account activated successfully.', true), 'default', array('class' => 'success'));
+			$this->Session->setFlash(__('Account is geactiveerd.', true), 'default', array('class' => 'success'));
 		} else {
-			$this->Session->setFlash(__('An error occurred.', true), 'default', array('class' => 'error'));
+			$this->Session->setFlash(__('Er is een fout opgetreden.', true), 'default', array('class' => 'error'));
 		}
 
 		$this->redirect(array('action' => 'login'));
@@ -241,7 +240,7 @@ class UsersController extends AppController {
 		$this->set('title_for_layout', __('Reset wachtwoord', true));
 		
 		if ($username == null || $key == null) {
-			$this->Session->setFlash(__('An error occurred.', true), 'default', array('class' => 'error'));
+			$this->Session->setFlash(__('Er is een fout opgetreden.', true), 'default', array('class' => 'error'));
 			$this->redirect(array('action' => 'login'));
 		}
 		
