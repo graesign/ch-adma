@@ -15,7 +15,7 @@
 		
 		<div class="grid_8 header-right">
 		<?php
-			echo sprintf(__("Welkom: %s", true), $this->Session->read('Auth.User.username'));
+			echo sprintf(__("Ingelogd als: %s", true), $this->Session->read('Auth.User.username'));
 			echo ' <span>|</span> ';
 			// Echo password dit uit MIS
 			echo sprintf(__(" %s", true), $this->Session->read('Auth.User.email'));

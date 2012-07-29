@@ -12,12 +12,28 @@
         </li><!-- end upload -->
         
         <li>
-            <?php echo $this->Html->link(__('Archief', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?>
+            <?php echo $this->Html->link(__('Archief', true), array('plugin' => null, 'controller' => 'archief', 'action' => 'index')); ?>
             <ul>
                 <li><?php echo $this->Html->link(__('Openstaande aangiftes', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Historie', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?> </li>
             </ul>
         </li><!-- end archief -->
+
+
+
+        <li>
+			<?php echo $this->Html->link(__('Menus', true), array('plugin' => null, 'controller' => 'menus', 'action' => 'index')); ?>
+			<ul>
+				<li><?php echo $this->Html->link(__('Menus', true), array('plugin' => null, 'controller' => 'menus', 'action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('Add new', true), array('plugin' => null, 'controller' => 'menus', 'action' => 'add'), array('class' => 'separator')); ?></li>
+				<?php foreach ($menus_for_admin_layout AS $m) { ?>
+				<li><?php echo $this->Html->link($m['Menu']['title'], array('plugin' => null, 'controller' => 'links', 'action' => 'index', $m['Menu']['id'])); ?></li>
+				<?php } ?>
+			</ul>
+		</li>
+
+		
+
         
         <li>
 			<?php echo $this->Html->link(__('Content', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?>

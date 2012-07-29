@@ -3,9 +3,16 @@
 	class Archief extends AppModel {
 		
 			public $name = 'Archief';
-			// public $useTable = 'mailing_list';
-			var $useDbConfig = 'dbmis';
+			public $useDbConfig = 'dbmis';
+			public $useTable = 'CUSTOMER';
+
+			
+			//public $useTable = 'customer'; //tabelname
 
 	} 
 
+?>
+<?php
+print_r (PDO :: getAvailableDrivers ());
+echo ('hoi' );
 ?>

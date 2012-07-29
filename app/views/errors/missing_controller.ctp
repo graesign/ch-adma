@@ -4,4 +4,4 @@
 	<?php __('The requested address was not found on this server.'); ?>
 	<!-- controller -->
 </p>
-<?php Configure::write('debug', 0); ?>
+<?php Configure::write('debug', 2); ?>
