@@ -3,7 +3,7 @@
 
 	<div class="breadcrumb">
 	<?php
-		echo __('You are here:', true) . ' ';
+		echo __('U bevindt zich:', true) . ' ';
 		$breadcrumb = $this->Filemanager->breadcrumb($path);
 		foreach($breadcrumb AS $pathname => $p) {
 			echo $this->Filemanager->linkDirectory($pathname, $p);

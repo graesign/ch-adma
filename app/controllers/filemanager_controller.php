@@ -99,10 +99,11 @@ class FilemanagerController extends AppController {
 		$this->set('title_for_layout', __('File Manager', true));
 
 		$path = realpath($path) . DS;
-		$regex = '/^' . preg_quote(realpath(APP), '/') . '/';
+			//Path to the folder: Admond
+		$regex = '/^' . preg_quote(realpath('c:\data'), '/') . '/';
 		if (preg_match($regex, $path) == false) {
 			$this->Session->setFlash(__(sprintf('Path %s is restricted', $path), true));
-			$path = APP;
+			$path = 'c:\data';
 		}
 
 		$blacklist = array('.git', '.svn', '.CVS');

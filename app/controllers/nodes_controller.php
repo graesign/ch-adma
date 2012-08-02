@@ -60,7 +60,8 @@ class NodesController extends AppController {
 		$this->set('title_for_layout', __('Content', true));
 
 		$this->Node->recursive = 0;
-		$this->paginate['Node']['order'] = 'Node.created DESC';
+		//$this->paginate['Node']['order'] = 'Node.created DESC';
+		$this->paginate['Node']['order'] = 'Node.created ASC';
 		$this->paginate['Node']['conditions'] = array();
 
 		$types = $this->Node->Taxonomy->Vocabulary->Type->find('all');

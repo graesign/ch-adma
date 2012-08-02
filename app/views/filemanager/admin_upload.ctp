@@ -3,7 +3,7 @@
 
 	<div class="breadcrumb">
 	<?php
-		__('You are here:');
+		__('U bevindt zich:');
 
 		$breadcrumb = $this->Filemanager->breadcrumb($path);
 		foreach($breadcrumb AS $pathname => $p) {
@@ -23,6 +23,7 @@
 		));
 	?>
 	<fieldset>
+		<?php echo "toegestaande extensies: PDF"; ?>
 	<?php echo $this->Form->input('Filemanager.file', array('type' => 'file')); ?>
 	</fieldset>
 
@@ -36,4 +37,5 @@
 		));
 	?>
 	</div>
+
 </div>
